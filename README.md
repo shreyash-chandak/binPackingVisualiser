@@ -1,7 +1,6 @@
 # binPackingVisualiser
 
-A **procedural rendering engine** that visualizes fundamental **Bin Packing heuristics**.  
-It bridges the gap between **Streamlit** (web interactivity) and **Manim** (mathematical vector graphics) to generate **frame-perfect animations** of algorithms in action.
+Visualiser for basic bin packing approximation algorithms - First Fit, Best Fit, First Fit Decreasing and Best Fit Decreasing.
 
 ---
 
@@ -36,7 +35,7 @@ Uses Manim’s powerful vector engine in **serverless environments**, without re
 
 ---
 
-## Aesthetic Protocols
+##  Aesthetic Protocols
 
 ### Color Map  
 A **thermal gradient** visually expresses item weight:  
