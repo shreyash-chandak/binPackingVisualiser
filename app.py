@@ -8,7 +8,7 @@ from manim import *
 st.set_page_config(page_title="Bin Packing Engine", layout="wide")
 
 st.title("📦 Bin Packing Visualization Engine")
-st.markdown("The Grand Geometrician's Render Pipeline")
+st.markdown("Click to watch a bunch of items go into bins")
 
 # --- SIDEBAR: INPUTS ---
 with st.sidebar:
@@ -72,8 +72,8 @@ def render_scene(config):
     return "./media/videos/packing_logic/480p15/BinPackingScene.mp4"
 
 # --- MAIN DISPLAY ---
-if st.button("🚀 Initialize Render Engine", type="primary"):
-    with st.spinner("The Geometrician is calculating... (This may take 30s)"):
+if st.button("Render Animation", type="primary"):
+    with st.spinner("The Animation is being created... (This may take 30s)"):
         
         # prepare config
         config = {

@@ -317,9 +317,9 @@ class BinPackingScene(MovingCameraScene):
         self.play(FadeIn(bg), Write(final_text))
         self.wait(2)
 
-if __name__ == "__main__":
-    # get_user_inputs()
-    os.environ["BINPACK_DATA"] = json.dumps(USER_CONFIG)
-    script_path = os.path.abspath(__file__)
-    print("\n[System] Handing off to Render Engine...")
-    os.system(f"manim -pql -v WARNING {script_path} BinPackingScene")
+# if __name__ == "__main__":
+#     # get_user_inputs()
+#     os.environ["BINPACK_DATA"] = json.dumps(USER_CONFIG)
+#     script_path = os.path.abspath(__file__)
+#     print("\n[System] Handing off to Render Engine...")
+#     os.system(f"manim -pql -v WARNING {script_path} BinPackingScene")
