@@ -53,6 +53,15 @@ with st.sidebar:
 
 # --- MAIN RENDER LOGIC ---
 if st.button("Render Animation", type="primary"):
+    if num_items > 12:
+        quality_flag = "-ql"      # Low Quality (480p, 15fps)
+        res_folder = "480p15"
+        msg = "Optimization Protocol: Rendering in Turbo Mode (480p)..."
+    else:
+        quality_flag = "-qm"      # Medium Quality (720p, 30fps)
+        res_folder = "720p30"
+        msg = "Aesthetic Protocol: Rendering in HD (720p)..."
+    
     with st.spinner("The video is being generated... (This may take a while)"):
         
         # 1. Prepare Configuration
@@ -66,11 +75,10 @@ if st.button("Render Animation", type="primary"):
         os.environ["BINPACK_DATA"] = json.dumps(config)
         
         # 2. Construct Command
-        # CRITICAL FIX: Removed '-p' (Preview). Used '-ql' (Quality Low).
         # Added '--format=mp4' to ensure compatibility.
         cmd = [
             "manim", 
-            "-ql", 
+            quality_flag,  
             "--media_dir", "./media", 
             "packing_logic.py", 
             "BinPackingScene"
@@ -86,7 +94,7 @@ if st.button("Render Animation", type="primary"):
             )
             
             # 4. Check Results
-            video_path = "./media/videos/packing_logic/480p15/BinPackingScene.mp4"
+            video_path = f"./media/videos/packing_logic/{res_folder}/BinPackingScene.mp4"
             
             if result.returncode == 0 and os.path.exists(video_path):
                 st.success("Render Complete.")
